@@ -1,0 +1,87 @@
+面试中必被问到的三个问题：
+1、自我介绍
+2、职业方向
+3、有没有想要问的
+
+1、列举一个日常工作中测到的测试的功能点，是如何定位BUG的
+ http://www.360doc.com/content/17/0627/11/40343770_666897925.shtml
+ 思路：用户层面：用户环境问题或操作问题
+           WEB页面：CSS样式，JS交互 HTML文本
+           中间件：各种缓存服务器
+           后端服务器：WEB服务器，应用服务器，比如TOMCAT，NGINX
+           请求返回404,有可能是NGINX配置不当
+           内存溢出，有可能是TOMCAT配置问题
+           数据库问题：前端字段长度控制和数据库不一致
+           
+
+2、一个页面打不开,请求很慢，如何定位BUG
+     A确定请求地址是否正确、网络是否畅通、操作姿势是否正确
+     B请求参数，请求参数类型，返回
+     C查看服务器日志，查看SQL
+
+3、一个请求发出去，到展现到用户面前，这中间发生了什么
+https://www.jianshu.com/p/1a9cdad4602e
+
+	* 输入地址
+	* 浏览器查找域名的 IP 地址
+	* 浏览器向 web 服务器发送一个 HTTP 请求
+	* 服务器的永久重定向响应
+	* 浏览器跟踪重定向地址
+	* 服务器处理请求
+	* 服务器返回一个 HTTP 响应
+	* 览器显示 HTML
+	* 浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等）
+
+    （建立连接（三次握手）-发送数据-服务器返回数据-关闭连接（四次握手））
+
+4、CONTENT_TYPE的VALUE是什么
+
+    header('Content-type: application/json'); //json
+    header('Content-Type: text/plain'); //纯文本格式
+    header('Content-Type: text/html; charset=utf-8'); //网页编码
+    header('Content-type: text/xml'); //xml
+
+
+    header('Content-Type: image/jpeg'); //JPG、JPEG
+
+    header('Content-Type: application/zip'); // ZIP文件
+
+    header('Content-Type: application/pdf'); // PDF文件
+
+   header('Content-Type: audio/mpeg'); // 音频文件
+
+   header('Content-type: text/css'); //css文件
+
+   header('Content-type: text/javascript'); //js文件
+
+   header('Content-type: application/pdf'); //pdf
+
+   header('Content-Type: application/x-shockw**e-flash'); //Flash动画
+
+5、性能指标QPS 
+    定义：每秒响应的请求数
+     每秒查询率QPS是对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准，在因特网上，作为域名系统服务器的机器的性能      经常用每秒查询率来衡量。对应fetches/sec，即每秒的响应请求数，也即是最大吞吐能力。 （看来是类似于TPS，只是应用于特定场景的吞吐量）
+
+   
+6、怎么定位性能问题，并发用户数如何算，在线用户数怎么得到
+
+7、应用服务器的一般瓶颈在哪里，数据服务器的一般瓶颈在哪里
+     应用：应用服务器的参数配置,CPU,内存
+    数据库：数据库服务器的参数配置 ，磁盘
+
+8、有没有发现REDIS缓存里面的性能问题
+    
+
+9、会不会在REDIS里面查数据
+   redis是一个key-value数据据，可以用于缓存
+    安装工具 RedisDesktopManager查看
+
+10、并发用户数怎么计算的
+
+11、用的什么中间件
+
+12、接口测试的检查点
+
+13、开发提给测试的版本总是被打回，来回很多次，有什么办法可以解决吗
+
+14、环境有几套，是怎么发布的
